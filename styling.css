@@ -54,8 +54,70 @@ html {
     height : 42rem;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.glow-on-hover{
+    grid-area:  3 / 2 / 4 / 3 ; 
+    width: 250px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    font-size:2rem;
+    font-family: sans-serif;
+    box-shadow: 0 0 3rem snow;
+}
+
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
     border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
 }
 h1{
     font-size: 4.8rem;
@@ -91,6 +153,7 @@ p{
     margin-top: 8rem;
     box-shadow: -2px 2px 14px black;
 }
+
 #resources{
     display: flex;
     flex-direction: row;
@@ -118,7 +181,7 @@ p{
 #footer{
     margin: auto;
     margin-top: 10rem;
-    width: 100%;
+    width: 86%;
     height :50rem;
 }
 #title{
@@ -137,6 +200,8 @@ p{
     position:absolute;
     bottom:50;
     left: 0;
+    text-align: center;
+    font-size: 2rem;
 }
 .navlink{
     font-size: 2rem;
@@ -146,6 +211,13 @@ p{
 .navlink:hover{
     font-size: 2.1rem;
     text-shadow: 1rem 0.5rem 1rem black;
+}
+#signup{
+    width : 70%;
+    margin: auto;
+    margin-top: 20rem;
+    margin-bottom: 20rem;
+    text-align: center;
 }
 @media all and (max-width:1200px){
     .resource-img{
@@ -159,6 +231,10 @@ p{
     }
 }
 @media all and (max-width:940px){
+    .glow-on-hover{
+        height : 48px;
+        width: 230px;
+    }
     .navlink{
         font-size : 1.8rem     
     }
@@ -192,6 +268,10 @@ p{
     }
 }
 @media all and (max-width:860px){
+    .glow-on-hover{
+        height : 45px;
+        width: 210px;
+    }
     .navlink{
         font-size : 1.4rem     
     }
@@ -221,6 +301,10 @@ p{
     }
 }
 @media all and (max-width:500px){
+    .glow-on-hover{
+        height : 41px;
+        width: 190px;
+    }
     #about-img{
         height:0;
     }
@@ -232,6 +316,10 @@ p{
     }
 }
 @media all and (max-width:375px){
+    .glow-on-hover{
+        height : 38px;
+        width: 160px;
+    }
     #logo{
         height: 0;
     }
