@@ -137,6 +137,10 @@ h3{
     font-family: 'Fira Sans';
     text-shadow: 3px 2px 4px snow;
 }
+.margin{
+    text-align: center;
+    margin-bottom: 20rem;
+}
 p{
     color: snow;
     font-size: 2.4rem;
@@ -215,8 +219,8 @@ p{
     width : 70%;
     margin: auto;
     margin-top: 20rem;
-    margin-bottom: 20rem;
     text-align: center;
+    margin-bottom: 5rem;
 }
 @media all and (max-width:1200px){
     .resource-img{
